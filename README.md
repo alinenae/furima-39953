@@ -50,6 +50,7 @@ Things you may want to cover:
 | price              |integer | null: false |
 | explanation        | text   | null: false |
 | category_id        |integer | null: false |
+| brand_id           |integer | null: false |
 | user               |references|null: false,foreign_key:true|
 
 ### Association
@@ -68,3 +69,14 @@ Things you may want to cover:
 
 - belongs_to :item
 - belongs_to :user
+- has_one :address
+
+## address テープル
+| Column             | Type   | Options    |
+| ------------------ | ------ | ---------- |
+| post_code          |integer | null: false|
+| address            | string | null: false|
+
+### 
+
+- belongs_to :order
