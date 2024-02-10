@@ -47,10 +47,13 @@ Things you may want to cover:
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | items_name         | string | null: false |
-| price              |integer | null: false |
 | explanation        | text   | null: false |
 | category_id        |integer | null: false |
-| brand_id           |integer | null: false |
+| items_state        |integer | null: false |
+| shipping_burden    |integer | null: false |
+| territory          |integer | null: false |
+| carry_dey          |integer | null: false |
+| price              |integer | null: false |
 | user               |references|null: false,foreign_key:true|
 
 ### Association
@@ -74,8 +77,12 @@ Things you may want to cover:
 ## address テープル
 | Column             | Type   | Options    |
 | ------------------ | ------ | ---------- |
-| post_code          |integer | null: false|
-| address            | string | null: false|
+| post_code          | string | null: false|
+| prefectures        |integer | null: false|
+| city               | string | null: false|
+| addresses          | string | null: false|
+| building           | string | null: false|
+| phone_number       | string | null: false|
 
 ### 
 
