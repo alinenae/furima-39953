@@ -49,10 +49,10 @@ Things you may want to cover:
 | items_name         | string | null: false |
 | explanation        | text   | null: false |
 | category_id        |integer | null: false |
-| items_state        |integer | null: false |
-| shipping_burden    |integer | null: false |
-| territory          |integer | null: false |
-| carry_dey          |integer | null: false |
+| items_state_id     |integer | null: false |
+| shipping_burden_id |integer | null: false |
+| territory_id       |integer | null: false |
+| carry_dey_id       |integer | null: false |
 | price              |integer | null: false |
 | user               |references|null: false,foreign_key:true|
 
@@ -74,16 +74,17 @@ Things you may want to cover:
 - belongs_to :user
 - has_one :address
 
-## address テープル
+## addresses テープル
 | Column             | Type   | Options    |
 | ------------------ | ------ | ---------- |
 | post_code          | string | null: false|
-| prefectures        |integer | null: false|
+| prefectures_id     |integer | null: false|
 | city               | string | null: false|
-| addresses          | string | null: false|
-| building           | string | null: false|
+| address            | string | null: false|
+| building           | string |            |
 | phone_number       | string | null: false|
+| order              |references|null: false,foreign_key:true|
 
-### 
+### Association
 
 - belongs_to :order
