@@ -27,10 +27,14 @@ Things you may want to cover:
 
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
-| name               | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| last_name_kana     | string | null: false |
+| fast_name_kana     | string | null: false |
 | nickname           | string | null: false |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
+| birthday           | date   | null: false |
 
 
 ### Association
@@ -43,8 +47,10 @@ Things you may want to cover:
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | items_name         | string | null: false |
-| price              | string | null: false |
+| price              |integer | null: false |
 | explanation        | text   | null: false |
+| items_id           |integer | null: false |
+| user               |references|foreign_key:true|
 
 ### Association
 
