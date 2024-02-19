@@ -27,28 +27,28 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("Explanation can't be blank")
     end
-    it 'category_idが空では登録できない' do
-      @item.category_id = ''
+    it 'category_idが初期値のままでは登録できない' do
+      @item.category_id = '1'
       @item.valid?
       expect(@item.errors.full_messages).to include("Category can't be blank")
     end
-    it 'items_state_idが空では登録できない' do
-      @item.items_state_id = ''
+    it 'items_state_idが初期値のままでは登録できない' do
+      @item.items_state_id = '1'
       @item.valid?
       expect(@item.errors.full_messages).to include("Items state can't be blank")
     end
-    it 'shipping_burden_idが空では登録できない' do
-      @item.shipping_burden_id = ''
+    it 'shipping_burden_idが初期値のままでは登録できない' do
+      @item.shipping_burden_id = '1'
       @item.valid?
       expect(@item.errors.full_messages).to include("Shipping burden can't be blank")
     end
-    it 'territory_idが空では登録できない' do
-      @item.territory_id = ''
+    it 'territory_idが初期値のままでは登録できない' do
+      @item.territory_id = '1'
       @item.valid?
       expect(@item.errors.full_messages).to include("Territory can't be blank")
     end
-    it 'carry_dey_idが空では登録できない' do
-      @item.carry_dey_id = ''
+    it 'carry_dey_idが初期値のままでは登録できない' do
+      @item.carry_dey_id = '1'
       @item.valid?
       expect(@item.errors.full_messages).to include("Carry dey can't be blank")
     end
@@ -57,12 +57,12 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("Price 300円以上9.999.999円以内で入力してください")
     end
-    it 'priceが300円以下では登録できない' do
+    it 'priceが299円以下では登録できない' do
       @item.price = '299'
       @item.valid?
       expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
     end
-    it 'priceが9.999.999円以上では登録できない' do
+    it 'priceが10,000,000円以上では登録できない' do
       @item.price = '10000000'
       @item.valid?
       expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
@@ -71,6 +71,11 @@ RSpec.describe Item, type: :model do
       @item.price = '３００'
       @item.valid?
       expect(@item.errors.full_messages).to include("Price is not a number")
+    end
+    it 'userが紐付いていないと保存できない' do
+      @item.user = nil
+      @item.valid?
+      expect(@item.errors.full_messages).to include('User must exist')
     end
   end
 end
