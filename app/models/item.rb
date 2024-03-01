@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :carry_dey
   belongs_to :user
   has_one_attached :item_image
+  has_one :order
 
   validates :item_image, presence: true
   validates :items_name, presence: true
