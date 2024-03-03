@@ -2,6 +2,4 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "./price"
-import "card"
-//= require jquery
-//= require jquery_ujs
+import "./card"
