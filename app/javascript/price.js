@@ -1,4 +1,4 @@
-window.addEventListener('turbo:load', () => {
+window.addEventListener('keydown', () => {
   const priceInput = document.getElementById("item-price");
     priceInput.addEventListener("input", () => {   
       const addTaxDom = document.getElementById("add-tax-price");
